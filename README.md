@@ -144,7 +144,7 @@ Multi-Document-RAG-Research-Assistant/
 Clone the repository
 
 ```bash
-git clone https://github.com/fazal-shaikh/Multi-Document-RAG-Research-Assistant.git
+git clone https://github.com/jiya426/Multi-Document-RAG-Research-Assistant.git
 
 cd Multi-Document-RAG-Research-Assistant
 ```
@@ -265,7 +265,7 @@ streamlit run app.py
 
 # 👨‍💻 Author
 
-**Fazal M. Shaikh**
+**Jiya Jain**
 
 - 🎓 B.E. Computer Science & Engineering
 - 💼 Gen AI & Data Science Engineer
