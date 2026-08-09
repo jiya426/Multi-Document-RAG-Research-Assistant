@@ -1,24 +1,27 @@
-# Virtual Environment
+# Virtual environment
 venv/
+.venv/
+
+# Environment variables
+.env
 
 # Python cache
 __pycache__/
 *.pyc
 
-# Environment variables
-.env
-
-# Large files (RAG related)
-*.pkl
-*.faiss
-*.bin
-*.pt
-
-# Generated ChromaDB
+# ChromaDB
 chroma_db/
 
-# Data folders
-data/
-models/
-vectorstore/
-embeddings/
+# Uploaded documents
+uploads/
+
+# Generated files
+*.pdf
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

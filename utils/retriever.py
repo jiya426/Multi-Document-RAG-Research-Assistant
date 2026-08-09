@@ -2,12 +2,12 @@ import logging
 from typing import Dict, Any, List
 from langchain_community.vectorstores import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_classic.chains import create_history_aware_retriever
-from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains import create_history_aware_retriever
+from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_classic.retrievers import EnsembleRetriever, ContextualCompressionRetriever
+from langchain.retrievers import EnsembleRetriever, ContextualCompressionRetriever
 from langchain_community.retrievers import BM25Retriever
-from langchain_classic.retrievers.document_compressors.base import BaseDocumentCompressor
+from langchain.retrievers.document_compressors.base import BaseDocumentCompressor
 from langchain_core.documents import Document
 from langchain_core.callbacks import Callbacks
 from pydantic import Field

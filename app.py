@@ -333,10 +333,19 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Verify API Keys on Startup to catch errors early, but render error in Streamlit
-if not config.check_keys():
-    st.error("Missing Google API Key! Please configure your .env file before proceeding.")
-    st.stop()
+# Verify API Keys on Startup, allowing dynamic entry via sidebar if missing
+google_api_key = os.getenv("GOOGLE_API_KEY")
+if not google_api_key or google_api_key.strip() == "" or google_api_key.strip() == "your_google_api_key_here":
+    st.sidebar.markdown('<div class="sidebar-header">Authentication</div>', unsafe_allow_html=True)
+    user_api_key = st.sidebar.text_input("Enter Google API Key:", type="password", help="Get a key from Google AI Studio")
+    if user_api_key:
+        os.environ["GOOGLE_API_KEY"] = user_api_key
+        st.sidebar.success("API Key applied!")
+        st.rerun()
+    else:
+        st.warning("Please enter your Google API Key in the sidebar to proceed.")
+        st.info("You can get a Gemini API Key from [Google AI Studio](https://aistudio.google.com/).")
+        st.stop()
 
 # Session state variables
 if "vector_db" not in st.session_state:
